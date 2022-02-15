@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coffee String</title>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+  </head>
+  <body>
+    <div class="container-login">
+    <div class="card">
+      <a href="dashboard.html">
+        <img src="./assets/img/logo.png" />
+      </a>
+      <form id="login" class="login" method="post" action=""></form>
+        <input type="text" id="userLogin" class="userLogin" placeholder="Usuário" required />
+        <input type="password" id="userPassword" class="userPassword" placeholder="Senha" required />
+        <button class="btnSubmitLogin" type="submit" form="login" >Login</button>
+        <button id="btnRegisterLogin" class="btnRegisterLogin">Cadastre-se</button>
+        
+        <div class="container-login-google">
+        <button class="btnSubmitGoogle"><i class="fa-brands fa-google"></i></button>
+        Entrar com Google
+      </div>
+     
+      </form>
+    </div>
+  </div>
+ 
+  </body>
+  <script src="https://kit.fontawesome.com/82255e9490.js" crossorigin="anonymous"></script>
+  <script src="./assets/js/alertsystem.js" type="module" ></script>
+  <script src="./assets/js/login.js"type="module" ></script>
+  <script src="./assets/js/firebase.js" type="module"></script>
+  <script src="./assets/js/authentication.js" type="module"></script>
+</html>

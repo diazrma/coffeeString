@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coffee String</title>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+
+</head>
+
+<body>
+    <div id="container" class="container">
+        <div class="tab">
+            <img src="./assets/img/logo.png" />
+            <div class="menu">
+                <button id="btnDashboard" onclick="openTab(event, 'tab1')" class="tablinks">
+                    <i class="fa-solid fa-chart-pie"></i> Dashboard
+                </button>
+                <button id="btnCoffeeBreak" onclick="openTab(event, 'tab2')" class="tablinks">
+                    <i class="fa-solid fa-coffee"></i> Coffee Break
+                </button>
+                <button id="btnSaude" class="tablinks" onclick="openTab(event, 'tab3')">
+                    <i class="fa-solid fa-heart"></i> Saúde</button>
+                <button id="btnConfiguracoes" class="tablinks" onclick="openTab(event, 'tab4')">
+                    <i class="fa-solid fa-cog"></i> Configurações
+                </button>
+            </div>
+        </div>
+
+        <div id="tab1" class="tabcontent">
+            <h3>Meu Desempenho</h3>
+
+        </div>
+
+
+        <div id="tab2" class="tabcontent">
+            <h3>Coffee Break</h3>
+            <div class="container-coffeebreak">
+                <img src="assets/img/coffee.png">
+
+                <button id="btnCoffeeMe" class='coffeeMe'><i id="syncCoffeeMe" class="fas fa-sync"></i> Coffee
+                    Me</button>
+                <span id="total" class="total">Total até agora: 0</span>
+            </div>
+        </div>
+
+        <div id="tab3" class="tabcontent">
+            <h3>Dicas de Saúde</h3>
+            <p>A cafeína
+                O principal composto ativo do café é a cafeína, que também está presente em outras bebidas como os chás.
+                A cafeína é um alcaloide psicoestimulante (droga capaz de estimular a atividade, a vigília e a atenção)
+                que
+                pertence ao grupo das xantinas. Os derivados das xantinas são utilizados como estimulantes cerebrais ou
+                estimulantes psicomotores por atuarem no córtex cerebral e nos centros medulares. Por isso, a cafeína
+                tem um
+                efeito acentuado sobre a função mental e comportamental. Ela atua no sistema nervoso autônomo e seu
+                mecanismo de ação inibe os receptores de adenosina.
+            </p>
+            <p>
+            <h4>Café faz mal?</h4>
+
+            Em indivíduos adultos, a cafeína presente no café parece proteger o cérebro de danos causados por estresse.
+            Mas,
+            na vida intrauterina, ela pode atrapalhar o desenvolvimento neural do feto e corroborar com fatores de risco
+            para doenças como epilepsia.
+
+            Apesar de não ser comprovado que o café faz mal, ele não é considerado seguro para crianças e adolescentes,
+            por
+            isso não deixe os pequeninos ingerirem mais de 100 mg por dia de cafeína.
+            <h4>Efeitos colaterais</h4>
+
+            Diz o ditado que a diferença entre veneno e remédio é a dose. Pessoas que ingerem mais de cinco xícaras de
+            café
+            por dia (mais de 500 mg ou 600 mg) podem sentir efeitos adversos. Entre eles, destacam-se: dor de cabeça,
+            insônia, nervosismo, agitação, irritabilidade, dor de estômago pelo aumento do suco gástrico, batimentos
+            cardíacos acelerados e tremores musculares. Pessoas que não costumam ingerir café com frequência podem
+            sentir os
+            efeitos negativos mesmo em baixas doses.</p>
+        </div>
+
+        <div id="tab4" class="tabcontent">
+            <h3>Configurações</h3>
+            <p><i class="fa-solid fa-moon"></i> Modo Escuro</p>
+            <label class="switch">
+                <input id="btnDarkMode" checked="false" type="checkbox">
+                <span id="slideDarkMode" class="slider round"></span>
+            </label>
+
+        </div>
+    </div>
+    <footer>
+        Todos os direitos Reservados a Rodrigo Cardoso ©
+
+        <a href="https://github.com/diazrma/">
+            <img src="./assets/img/github.png" /></a>
+    </footer>
+</body>
+<script src="https://kit.fontawesome.com/82255e9490.js" crossorigin="anonymous"></script>
+<script type="text/javascript" src="./assets/js/tabs.js"></script>
+<script type="text/javascript" src="./assets/js/coffeeme.js"></script>
+<script type="text/javascript" src="./assets/js/config.js"></script>
+
+</html>
