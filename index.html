@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Coffee String</title>
     <link rel="stylesheet" href="./assets/css/style.css" />
+    
   </head>
   <body>
     <div class="container-login">
@@ -19,9 +20,11 @@
         <button class="btnSubmitLogin" type="submit" form="login" >Login</button>
         <button id="btnRegisterLogin" class="btnRegisterLogin">Cadastre-se</button>
         
-        <div class="container-login-google">
-        <button class="btnSubmitGoogle"><i class="fa-brands fa-google"></i></button>
+        <div  id="google-button" class="container-login-google">
+        <button  class="btnSubmitGoogle"><i class="fa-brands fa-google"></i></button>
         Entrar com Google
+
+   
       </div>
      
       </form>
@@ -29,6 +32,7 @@
   </div>
  
   </body>
+  <script src="https://cdn.rawgit.com/oauth-io/oauth-js/c5af4519/dist/oauth.js"></script>
   <script src="https://kit.fontawesome.com/82255e9490.js" crossorigin="anonymous"></script>
   <script src="./assets/js/alertsystem.js" type="module" ></script>
   <script src="./assets/js/login.js"type="module" ></script>

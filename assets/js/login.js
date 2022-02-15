@@ -1,10 +1,12 @@
 "use strict";
 import { auth, signInWithEmailAndPassword } from "./authentication.js";
 import { alertsystem } from "./alertsystem.js";
+import config from "../../dotenv.json" assert { type: "json" };
 
 const email = document.getElementById("userLogin");
 const password = document.getElementById("userPassword");
 const formLogin = document.getElementById("login");
+const googleButton =document.getElementById('google-button');
 
 const login = (email, password) => {
   if (email == "" || password == "") {
@@ -37,8 +39,26 @@ formLogin.addEventListener("submit", function (e) {
   login(email.value, password.value);
 });
 
+googleButton.addEventListener("click", function() {
+
+  OAuth.initialize(config.OAuth);
+  
+  OAuth.popup('google').then(google => {
+    console.log('google:',google);
+    google.me().then(data => {
+      console.log(data)
+     
+    });
+    google.get('/oauth2/v3/userinfo').then(data => {
+      console.log('self data:', data);
+    })
+  });
+});
+
 const btnRegisterLogin = document.getElementById("btnRegisterLogin");
 
 btnRegisterLogin.addEventListener("click", () => {
   window.location.href = "register.html";
 });
+
+
