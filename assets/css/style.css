@@ -58,6 +58,14 @@ html {
   color: var(--color-primary);
   opacity: 0.5;
 }
+
+input[required] {
+  background-image: radial-gradient(red 20%, transparent 30%);
+  background-size: 1em 1em;
+  background-position: top right;
+  background-repeat: no-repeat
+}
+
 .card select {
   width: 250px;
   height: 25px;
