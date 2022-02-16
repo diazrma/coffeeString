@@ -11,6 +11,7 @@
 </head>
 
 <body>
+    <div id="overlay" class="overlay">
     <div id="container" class="container">
         <div class="tab">
             <img src="./assets/img/logo.png" />
@@ -26,15 +27,21 @@
                 <button id="btnConfiguracoes" class="tablinks" onclick="openTab(event, 'tab4')">
                     <i class="fa-solid fa-cog"></i> Configurações
                 </button>
+                <button id="logout" class="logout ">
+                    <i class="fa-solid fa-exi"></i> Sair
+                </button>
             </div>
         </div>
 
         <div id="tab1" class="tabcontent">
             <h3>Meu Desempenho</h3>
+            <div id="userInfo" class="userInfo">
+
+            </div>
 
         </div>
 
-
+        
         <div id="tab2" class="tabcontent">
             <h3>Coffee Break</h3>
             <div class="container-coffeebreak">
@@ -96,10 +103,15 @@
         <a href="https://github.com/diazrma/">
             <img src="./assets/img/github.png" /></a>
     </footer>
+</div>
 </body>
 <script src="https://kit.fontawesome.com/82255e9490.js" crossorigin="anonymous"></script>
 <script type="text/javascript" src="./assets/js/tabs.js"></script>
 <script type="text/javascript" src="./assets/js/coffeeme.js"></script>
 <script type="text/javascript" src="./assets/js/config.js"></script>
+<script  src="./assets/js/logout.js" type="module"></script>
+<script  src="./assets/js/verifyUser.js" type="module"></script>
+<script src="./assets/js/alertsystem.js" type="module" ></script>
+<script  src="./assets/js/dashboard.js" type="module"></script>
 
 </html>

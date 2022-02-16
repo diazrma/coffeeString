@@ -1,12 +1,18 @@
 "use strict";
-import { auth, signInWithEmailAndPassword } from "./authentication.js";
+import {
+  auth,
+  signInWithEmailAndPassword,
+  signInWithPopup,
+  provider,
+  GoogleAuthProvider,
+} from "./authentication.js";
 import { alertsystem } from "./alertsystem.js";
 import config from "../../dotenv.json" assert { type: "json" };
 
 const email = document.getElementById("userLogin");
 const password = document.getElementById("userPassword");
 const formLogin = document.getElementById("login");
-const googleButton =document.getElementById('google-button');
+const googleButton = document.getElementById("google-button");
 
 const login = (email, password) => {
   if (email == "" || password == "") {
@@ -39,20 +45,32 @@ formLogin.addEventListener("submit", function (e) {
   login(email.value, password.value);
 });
 
-googleButton.addEventListener("click", function() {
+googleButton.addEventListener("click", function () {
+  signInWithPopup(auth, provider)
+    .then((result) => {
+      const credential = GoogleAuthProvider.credentialFromResult(result);
+      const token = credential.accessToken;
 
-  OAuth.initialize(config.OAuth);
-  
-  OAuth.popup('google').then(google => {
-    console.log('google:',google);
-    google.me().then(data => {
-      console.log(data)
-     
-    });
-    google.get('/oauth2/v3/userinfo').then(data => {
-      console.log('self data:', data);
+      const user = result.user;
+      //displayName uid photoURL email accessToken
+      // console.log(token);
+      // console.log(user.accessToken);
+      console.log(user.photoURL)
+      const userInfo = [];
+      userInfo[0] = [user.photoURL,user.displayName, user.email, user.accessToken ];
+      localStorage.setItem('userInfo',JSON.stringify(userInfo[0]));
+      window.location.href = "../dashboard.html";
     })
-  });
+    .catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+
+      const email = error.email;
+
+      const credential = GoogleAuthProvider.credentialFromError(error);
+
+      console.log(error.code);
+    });
 });
 
 const btnRegisterLogin = document.getElementById("btnRegisterLogin");
@@ -61,4 +79,18 @@ btnRegisterLogin.addEventListener("click", () => {
   window.location.href = "register.html";
 });
 
+// cookies
+(() => {
+  if (!localStorage.consentCookies) {
+    document.querySelector(".box-cookies").classList.remove("hide");
+  }
 
+  const acceptCookies = () => {
+    document.querySelector(".box-cookies").classList.add("hide");
+    localStorage.setItem("consentCookies", "accept");
+  };
+
+  const btnCookies = document.querySelector(".btn-cookies");
+
+  btnCookies.addEventListener("click", acceptCookies);
+})();
