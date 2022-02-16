@@ -8,7 +8,7 @@ import {
 } from "https://www.gstatic.com/firebasejs/9.6.6/firebase-database.js";
 
 
-import config from "../../dotenv.json" assert { type: "json" };
+import config from "../../envtest.json" assert { type: "json" };
 
 const firebaseConfig = {
   apiKey: config.apiKey,
