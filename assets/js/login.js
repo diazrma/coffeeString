@@ -7,7 +7,6 @@ import {
   GoogleAuthProvider,
 } from "./authentication.js";
 import { alertsystem } from "./alertsystem.js";
-import config from "../../dotenv.json" assert { type: "json" };
 
 const email = document.getElementById("userLogin");
 const password = document.getElementById("userPassword");
