@@ -1,6 +1,7 @@
 "use strict";
 
-const openTab = (e, tabName) => {
+const loadView = (e, tabName) => {
+  console.log('a')
   var i, tabcontent, tablinks;
   tabcontent = document.getElementsByClassName("tabcontent");
   for (i = 0; i < tabcontent.length; i++) {

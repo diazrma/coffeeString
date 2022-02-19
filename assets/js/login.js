@@ -15,24 +15,24 @@ const googleButton = document.getElementById("google-button");
 
 const login = (email, password) => {
   if (email == "" || password == "") {
-    alertsystem("Preencha todos os campos!");
+    alertsystem("Preencha todos os campos!",3000);
   } else {
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         const user = userCredential.user;
         //user.uid
-        window.location.href = "../dashboard.html";
+        window.location.href = "../home.html";
       })
       .catch((error) => {
         switch (error.code) {
           case "auth/invalid-email":
-            alertsystem("E-mail inválido!");
+            alertsystem("E-mail inválido!",3000);
             break;
           case "auth/user-not-found":
-            alertsystem("Usuário não encontrado!");
+            alertsystem("Usuário não encontrado!",3000);
             break;
           default:
-            alertsystem("Preencha todos os campos!");
+            alertsystem("Preencha todos os campos!",3000);
         }
         console.log(error.code);
       });
@@ -58,7 +58,7 @@ googleButton.addEventListener("click", function () {
       const userInfo = [];
       userInfo[0] = [user.photoURL,user.displayName, user.email, user.accessToken ];
       localStorage.setItem('userInfo',JSON.stringify(userInfo[0]));
-      window.location.href = "../dashboard.html";
+      window.location.href = "../home.html";
     })
     .catch((error) => {
       const errorCode = error.code;

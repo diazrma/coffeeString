@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coffee String</title>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+</head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<body>
+    <div id="container" class="container">
+        <div class="tab">
+            <img src="./assets/img/logo.png" />
+            <div class="menu">
+                <button id="btnDashboard" onclick="loadView(event, 'tab1')" class="tablinks">
+                    <i class="fa-solid fa-chart-pie"></i> Dashboard
+                </button>
+                <button id="btnCoffeeBreak" onclick="loadView(event, 'tab2')" class="tablinks">
+                    <i class="fa-solid fa-coffee"></i> Coffee Break
+                </button>
+                <button id="btnSaude" class="tablinks" onclick="loadView(event, 'tab3')">
+                    <i class="fa-solid fa-heart"></i> Saúde</button>
+                <button id="btnConfiguracoes" class="tablinks" onclick="loadView(event, 'tab4')">
+                    <i class="fa-solid fa-cog"></i> Configurações
+                </button>
+                <button id="logout" class="logout ">
+                    <i class="fa-solid fa-exi"></i> Sair
+                </button>
+            </div>
+        </div>
+        <div id="tab1" class="tabcontent">
+            <!-- views/dashboad.html -->
+        </div>
+
+        <div id="tab2" class="tabcontent">
+            <!-- views/coffebreak.html -->
+        </div>
+
+        <div id="tab3" class="tabcontent">
+            <!-- views/health.html -->
+        </div>
+
+        <div id="tab4" class="tabcontent">
+            <!-- views/config.html -->
+        </div>
+    </div>
+    <footer>
+        Todos os direitos Reservados a Rodrigo Cardoso ©
+        <a href="https://github.com/diazrma/">
+            <img src="./assets/img/github.png" /></a>
+    </footer>
+    </div>
+    <div id="overlay" class="overlay">
+        <i class="fas fa-spinner fa-pulse"></i>
+    </div>
+</body>
+<script src="https://kit.fontawesome.com/82255e9490.js" crossorigin="anonymous"></script>
+<script type="text/javascript" src="./assets/js/tabs.js"></script>
+<script src="./assets/js/logout.js" type="module"></script>
+<script src="./assets/js/verifyUser.js" type="module"></script>
+<script src="./assets/js/loading.js" type="module"></script>
+<script src="./assets/js/alertsystem.js" type="module"></script>
+<script>
+    $('#tab1').load("views/dashboard.html");
+    $('#tab2').load("views/coffebreak.html");
+    $('#tab3').load("views/health.html");
+    $('#tab4').load("views/config.html");
+</script>
+</html>

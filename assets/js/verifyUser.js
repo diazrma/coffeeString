@@ -3,23 +3,21 @@
 import { auth } from "./authentication.js";
 import { alertsystem } from "./alertsystem.js";
 
-const overlay = document.getElementById("overlay");
 auth.onAuthStateChanged(function (user) {
-  if (window.location.href.indexOf("dashboard") > -1) {
+  if (window.location.href.indexOf("home") > -1) {
     if (!user) {
-        localStorage.setItem('userInfo','');
-      overlay.style.display = "none";
-      alertsystem("Você precisa estar logado!");
+      localStorage.setItem('userInfo','');
+      alertsystem("Você precisa estar logado!",3000);
       setTimeout(function () {
         window.location.href = "./";
       }, 2000);
     }
   } else {
     if (user) {
-      alertsystem(`Você já está logado como ${user.displayName}`);
+      alertsystem(`Você já está logado como ${user.displayName}`,3000);
       document.getElementById("userLogin").value = user.email;
       setTimeout(function () {
-        window.location.href = "./dashboard.html";
+        window.location.href = "./home.html";        
       }, 2000);
     }
   }

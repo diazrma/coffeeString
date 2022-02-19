@@ -115,7 +115,7 @@ udfirstOption {
   font-weight: bold;
 }
 .card .btnSubmitGoogle {
-  background-color:var(--color-warning);
+  background-color: var(--color-warning);
   width: 50px;
   height: 50px;
   border-radius: 100%;
@@ -343,6 +343,14 @@ input:checked + .slider:before {
   border-radius: 50%;
 }
 
+.content-config{
+  display: flex;
+  align-items: center;
+}
+.content-config label{
+  margin:10px;
+}
+
 #alertSystem {
   position: fixed;
   background-color: var(--color-logo-secondary);
@@ -396,7 +404,7 @@ input:checked + .slider:before {
 }
 
 .overlay {
-  display: hidden;
+  display: none;
   position: fixed;
   top: 0;
   left: 0;
@@ -404,6 +412,15 @@ input:checked + .slider:before {
   bottom: 0;
   width: 100%;
   height: 100%;
-  background-color: white;
-  z-index: 10000;
+  background-color: var(--color-primary);
+  z-index: 100;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0.5;
+}
+.overlay i {
+  font-size: 100px;
+  color: var(--color-logo-primary);
 }

@@ -4,7 +4,7 @@ const btnDarkMode = document.getElementById("btnDarkMode");
 const slideDarkMode = document.getElementById("slideDarkMode");
 const container = document.getElementById("container");
 
-document.getElementById('btnCoffeeBreak').click();
+document.getElementById('btnDashboard').click();
 
 btnDarkMode.addEventListener("click", function () {
   if (this.checked) {
